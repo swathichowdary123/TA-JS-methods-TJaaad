@@ -20,7 +20,7 @@ function double(num) {
 }
 let doubleNum = numbers.forEach(double);
 ```
-
+[100, 200, 33, 45, 65, 76, 51];
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function double(num) {
