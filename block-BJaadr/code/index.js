@@ -2,6 +2,7 @@
 
 function countAllPeople() {
   // your code goes here
+  let totalPeople=0;
 }
 
 function peopleByHouses() {
