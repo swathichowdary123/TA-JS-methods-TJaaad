@@ -16,19 +16,27 @@ let persons = [
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
-
+let totalGrade=persons.reduce((sum,person)=>sum+person.grade,0);
+let averageGrade=totalGrade/persons.length;
 // Find the average grade of male
-
+let malePersons=person.filter(person=>person.sex==='M');
+let totalMaleGrade=malepersons.reduce((sum,person)=>sum+person.grade,0);
+let averageMaleGrade=totalMaleGrade/malePersons.length;
 // Find the average grade of female
-
+let femalePersons=person.filter(person=>person.sex==='F');
+let totalFemaleGrade=femalepersons.reduce((sum,person)=>sum+person.grade,0);
+let averageFemaleGrade=totalFemaleGrade/femalePersons.length;
 // Find the highest grade
-
+[...peopleGrade].sort((a,b)=>a-b).pop();
 // Find the highest grade in male
-
+maleGrade.map((person)=>person.grade);
 // Find the highest grade in female
-
+femaleGrade.map((person)=>person.grade);
 // Find the highest grade for people whose name starts with 'J' or 'P'
-
+let nameWithJorP=person.filter((person)=>person.name.startsWith("J")||
+person.name.startsWith("p"));
+let gradeWithJorP=nameWithJorP.map((person)=>person.grade);
+[...gradeWithJorP].sort((a,b)=>a-b).pop();
 const fruitBasket = [
   'banana',
   'cherry',
@@ -51,7 +59,10 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
-
+let fruitsObj=fruitBasket.reduce((obj,fruit)=>{
+  obj[fruit]=(obj[fruit]||0)+1;
+  return obj;
+},{});
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -61,7 +72,11 @@ Output:
 
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
-
+ fruitsObj=fruitBasket.reduce((obj,fruit)=>{
+  obj[fruit]=(obj[fruit]||0)+1;
+  return obj;
+},{});
+let fruitArray=Object.keys(fruitsObj).map(fruit=>[fruit,fruitsObj[fruit]]);
 const data = [
   [1, 2, 3],
   [4, 5, 6],
@@ -70,7 +85,7 @@ const data = [
 ];
 
 // Using reduce flat data array
-
+let flatData=data.reduce((acc,row)=>acc.concat(row),[]);
 const dataTwo = [
   [1, 2, 3],
   [4, 5, 6],
@@ -79,7 +94,7 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
-
+let flatDtaTwo=data.reduce((acc,curr)=>acc.concat(curr.flat()),[]);
 /*
 
 Create these functions which accepts a number value and returns a number value:
@@ -100,7 +115,21 @@ let pipeline = [
   half,
   increment,
 ];
-
+function increment(value){
+  return value+1;
+}
+function double(value){
+  return value*2;
+}
+function decrement(value){
+  return value-1;
+}
+function triple(value){
+  return value*3;
+}
+function half(value){
+  return Math.floor(value/2);
+}
 /*
 Using the pipeline variable that contains the collection of functions, taking the initial value 3 find the output.
 
